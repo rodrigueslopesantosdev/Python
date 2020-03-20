@@ -28,7 +28,7 @@ def envia_arquivo (nome_arquivo, bucket, nome_objeto=None):
     return True
 
 """Variável com o nome do arquivo para upload."""        
-nome_arquivo = 'C:\Tiago\Bases_Testes_Python\SSDBT_02_v2.dbf'
+nome_arquivo = '<FILE PATH>'
 
 print ('Programa iniciado!')
 print ('Enviando arquivo!')
