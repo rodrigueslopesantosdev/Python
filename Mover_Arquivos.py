@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Jun 11 11:03:48 2019
-
-@author: tiago.santos
-"""
 import boto3
 
 """Objeto para conectar ao AWS S3."""
@@ -17,7 +11,7 @@ local_origem = {
 
 """Local de destino do arquivo"""
 local_destino = {
-            'Bucket':'d580-teste',
+            'Bucket':'<bucker_name>',
         }
 
 """Chamada de função para copiar o arquivo de um bucket para outro."""

@@ -7,7 +7,7 @@ timeOut = 60 #segundos
 cicloTimeOut = 30
 contCicloTimeOut = 0
 
-filePath = '/home/scripts/arquivosRespostaGlue'
+filePath = '<path>'
 
 
 parser = argparse.ArgumentParser(description='Script para consultar o status de um crawler do AWS Glue.')

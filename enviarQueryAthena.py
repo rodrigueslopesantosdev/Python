@@ -23,50 +23,21 @@ contCicloTimeOut = 0
 
 #lista de arquivos passada como parametro
 
-fileNameList = ['/home/nifi/scripts/arquivosRespostaGlue/crw_cliente_pf_READY','/home/nifi/scripts/arquivosRespostaGlue/crw_faturas_pf_READY']
+fileNameList = ['<path1>', '<path2>']
 
 
 totalArquivos = len(fileNameList)
 contArquivos = 0
 totalArquivosEncontrados = 0
 
-outPutLocation = 's3://aws-athena-query-results-944144161735-us-east-1'
+outPutLocation = 's3://<path>'
 
 client = boto3.client('athena',
                       aws_access_key_id = AWS_ACCESS_KEY_ID,
                       aws_secret_access_key = AWS_SECRET_ACCESS_KEY,
                       region_name = AWS_DEFAULT_REGION)
 
-queryAthena = 'insert into axxiom.cliente_fatura_pf \
-select \
-   cast(cd_fatura as integer) cd_fatura, \
-   fat.cd_und_consumidor, \
-   cast(fat.dt_leitura as date) dt_leitura, \
-   cast(fat.dt_vencimento as date) dt_vencimento, \
-   cast(fat.dt_pagamento as date) dt_pagamento, \
-   cast(fat.vr_fatura as decimal(15,2)) vr_fatura, \
-   cast(fat.qt_consumo_kwh as decimal(15,2)) qt_consumo_kwh, \
-   cast(substring(fat.dt_atualizacao, 1, 10) as date) dt_atualizacao, \
-   cli.nr_cpf, \
-   cli.nm_nome, \
-   cast(cli.nr_idade as integer) nr_idade, \
-   cast(cli.dt_nascimento as date) dt_nascimento, \
-   cli.ds_etnia, \
-   cli.ds_religiao, \
-   cli.ds_sexo, \
-   cli.ds_nacionalidade, \
-   cli.ds_naturalidade, \
-   cli.ds_logradouro, \
-   cli.ds_cidade, \
-   cli.ds_uf, \
-   cli.nr_cep, \
-   cli.ds_estado_civil \
-from axxiom.faturas_pf fat \
-     join axxiom.cliente_pf cli \
-         on fat.cd_cliente = cli.cd_cliente \
-where not exists (select 1 FROM axxiom.cliente_fatura_pf pf \
-                     where cli.nr_cpf = pf.nr_cpf \
-                     and cast(fat.dt_pagamento as date) = pf.dt_pagamento)'
+queryAthena = 'SELECT ....'
 
 print('Busca dos arquivos iniciada com sucesso!')
 
@@ -105,13 +76,13 @@ for pos in fileNameList:
         print(err)
 
 
-filePath = '/home/nifi/scripts/arquivosRespostaGlue'
-fileNameTagAtlas = filePath + '/crw_faturas_pf_READY_MARCACAO'
+filePath = '<path>'
+fileNameTagAtlas = filePath + '<path>'
 fileStatusCrawler = open(fileNameTagAtlas, 'w')
 fileStatusCrawler.close()
 
-filePath = '/home/nifi/scripts/arquivosRespostaGlue'
-fileNameTagAtlas = filePath + '/crw_cliente_pf_READY_MARCACAO'
+filePath = '<path>'
+fileNameTagAtlas = filePath + '<path>'
 fileStatusCrawler = open(fileNameTagAtlas, 'w')
 fileStatusCrawler.close()
 

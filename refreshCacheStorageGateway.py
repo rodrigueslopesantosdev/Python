@@ -1,8 +1,4 @@
-"""
-Created on Mon Jun 10 17:42:18 2019
 
-@author: tiago.santos
-"""
 import argparse
 import boto3
 

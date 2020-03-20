@@ -17,4 +17,4 @@ local_origem = {
         }
 
 """Chamada de função para copiar o arquivo de um bucket para outro."""
-s3_conexao.meta.client.copy(local_origem, 'd580-teste', local_origem['Key'])
+s3_conexao.meta.client.copy(local_origem, '<bucket name>', local_origem['Key'])

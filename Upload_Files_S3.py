@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Jun 10 17:42:18 2019
-
-@author: tiago.santos
-"""
 
 import boto3;
 import logging;
@@ -34,7 +28,7 @@ print ('Programa iniciado!')
 print ('Enviando arquivo!')
 
 """Chamada da função de envio do arquivo para a AWS S3."""
-envia_arquivo(nome_arquivo, 'metadados', 'SSDBT_02_v2.dbf')
+envia_arquivo(nome_arquivo, '<bucket_s3>', '<nome_arquivo>')
 
 print ('Arquivo enviado!')
 print ('Programa terminado com sucesso!')

@@ -2,7 +2,7 @@ import cx_Oracle
 import numpy
 
 hostName = ''
-porta = 1521
+porta = 1
 sidName = ''
 userName = ''
 passWord = ''
@@ -18,7 +18,7 @@ cursor.execute ('SELECT DADOS FROM <SCHEMA>.<TABLE> WHERE '
 
 rows = cursor.fetchall()
 
-filename="C:\\Tiago\\ExtractBLOB\\blobTest_1500.xml"
+filename="<path>\\test.xml"
 
 for row in rows:
     print(row)

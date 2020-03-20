@@ -1,15 +1,8 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Sep 20 09:36:41 2019
-
-@author: tiago.santos
-"""
-
 import boto3
 
 awsAccessKeyId= ''
 awsSecretAccessKey= ''
-regionName= 'us-east-1'
+regionName= ''
 
 fireHoseDeliveryStreamName = 'kinesis-firehose'
 kinesisDataStreamName= 'kinesis-dms'

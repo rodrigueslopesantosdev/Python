@@ -1,15 +1,10 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Sep 20 15:52:31 2019
 
-@author: tiago.santos
-"""
 
 import boto3
 
 awsAccessKeyId= ''
 awsSecretAccessKey= ''
-regionName= 'us-east-1'
+regionName= ''
 roleARN= ''
 clusterName= ''
 serviceName= ''
